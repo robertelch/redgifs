@@ -1,5 +1,5 @@
 # redgifs
-a small python module to interacte with https://redgifs.com/
+a small python module to interact with https://redgifs.com/
 
 # installation:
 ```
