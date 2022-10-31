@@ -1,10 +1,5 @@
 import requests, redgifs
 
-"""
-requests.get("http://www.example.com/", headers={"Content-Type":"text"})
-https://api.redgifs.com/v2/recommend/tags/uniformprettyspoonbill
-"""
-
 class Redgifs:
     def __init__(self, token=False):
         if not token:
