@@ -64,5 +64,28 @@ pip install git+https://github.com/NacreousDawn596/redgifs -U
  video = api.getGifById("id")
  video.download()
  ```
+
+Gif class:
+```py 
+class gif():
+          def __init__(self, data):
+                self.data = data
+                self.id = data['id']
+                self.hasAudio = data['hasAudio']
+                self.likes = data['likes']
+                self.tags = data['tags']
+                self.verified = data['verified']
+                self.views = data['views']
+                self.duration = data['duration']
+                self.published = data['published']
+                self.author = data['userName']
+                self.url = f"https://www.redgifs.com/watch/{self.id}"
+
+          def getSimilarGifs(self):
+                return gs.getSimilarGifsTo(self.id)
+
+          def download(self):
+                gs.download(self.id)
+```
  
  **if you got any suggestions or issues, don't forget to report them!!**
