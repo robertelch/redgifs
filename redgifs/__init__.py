@@ -35,7 +35,7 @@ class Redgifs:
         return gif(d)
 
     def getGifsById(self, id):
-        print(self.request(f"/v2/gifs?ids={','.join(id.split())}").json())
+        
         return [self.toGif(i) for i in self.request(f"/v2/gifs?ids={','.join(id.split())}").json()["gifs"]]
 
     def getGifById(self, id):
@@ -59,6 +59,7 @@ class Redgifs:
 
     def search(self, keyword, count):
         if not (10 <= count <= 80): raise Exception("The Number of Gifs Cannot be less Than 10 and it Cannot Exceed 80.")        
+        print(self.request(f"/v2/gifs/search?search_text={'+'.join(keyword.split())}&order=trending&count={count}").json())
         return [self.toGif(i) for i in self.request(f"/v2/gifs/search?search_text={'+'.join(keyword.split())}&order=trending&count={count}").json()["gifs"]]
     
 
