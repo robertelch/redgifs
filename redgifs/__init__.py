@@ -3,7 +3,7 @@ import requests, redgifs
 class Redgifs:
     def __init__(self, token=False):
         if not token:
-            self.token, self.ip, temp, temp = requests.get('https://api.redgifs.com/v2/auth/temporary').json().values()
+            self.token, self.ip, temp, temp, temp = requests.get('https://api.redgifs.com/v2/auth/temporary').json().values()
         else:
             self.token = token
         self.url = "https://api.redgifs.com"
