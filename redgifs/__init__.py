@@ -58,6 +58,8 @@ class Redgifs:
         return url
 
     def search(self, keyword, count):
+        print("hellooo")
+        print(f"/v2/gifs/search?search_text={'+'.join(keyword.split())}&order=trending&count={count}")
         if not (10 <= count <= 80): raise Exception("The Number of Gifs Cannot be less Than 10 and it Cannot Exceed 80.")        
         print(self.request(f"/v2/gifs/search?search_text={'+'.join(keyword.split())}&order=trending&count={count}").json())
         return [self.toGif(i) for i in self.request(f"/v2/gifs/search?search_text={'+'.join(keyword.split())}&order=trending&count={count}").json()["gifs"]]
