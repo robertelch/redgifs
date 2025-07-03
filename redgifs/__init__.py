@@ -35,6 +35,7 @@ class Redgifs:
         return gif(d)
 
     def getGifsById(self, id):
+        print(self.request(f"/v2/gifs?ids={','.join(id.split())}").json())
         return [self.toGif(i) for i in self.request(f"/v2/gifs?ids={','.join(id.split())}").json()["gifs"]]
 
     def getGifById(self, id):
